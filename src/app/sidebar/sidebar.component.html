@@ -1,0 +1,24 @@
+<nav>
+  <ul>
+      <li [class.activated]="current == '/dashboard'">
+          <a routerLink="/dashboard">
+            <i class="material-icons">dashboard</i>
+          </a>
+      </li>
+      <li [class.activated]="current == '/profile'">
+        <a routerLink="/profile">
+          <i class="material-icons">person</i>
+        </a>
+      </li>
+      <li>
+        <a href="https://apiindiablob.blob.core.windows.net/40017-d9086e02f8ee9d46b719e18/profile.pdf">
+          <i class="material-icons">cloud_download</i>
+        </a>
+      </li>
+      <li [class.activated]="current == '/feedback'">
+        <a routerLink="/feedback">
+          <i class="material-icons">feedback</i>
+        </a>
+      </li>
+  </ul>
+</nav>

@@ -1,0 +1,27 @@
+<h1>Himanish Setia</h1>
+
+<ul>
+  <li>
+    <form class="example-form feedbackForm">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name" [(ngModel)]="feedback.name" [ngModelOptions]="{standalone: true}" value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" [(ngModel)]="feedback.email" [ngModelOptions]="{standalone: true}" value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Occupation" [(ngModel)]="feedback.occupation" [ngModelOptions]="{standalone: true}" value="">
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Leave a comment" [(ngModel)]="feedback.comment" [ngModelOptions]="{standalone: true}"></textarea>
+      </mat-form-field>
+
+      <div class="button-row">
+        <button mat-flat-button color="primary" (click)="submitFeedback()" class="feedbackSubmit">Submit</button>
+      </div>
+    </form>
+  </li>
+</ul>
