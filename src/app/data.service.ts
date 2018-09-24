@@ -14,4 +14,8 @@ export class DataService {
     
     return this.http.get('https://profile-email-server.herokuapp.com/api/sendMail?comment='+data.comment+'&name='+data.name+'&email='+data.email+'&occupation='+data.occupation);
   }
+
+  reduce(data){
+    return this.http.get('http://localhost:3000/api/reduce?map='+data);
+  }
 }

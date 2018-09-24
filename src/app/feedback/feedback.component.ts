@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class FeedbackComponent implements OnInit {
 
+
   feedback = {
     name: '',
     email:'',
