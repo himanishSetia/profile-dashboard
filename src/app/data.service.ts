@@ -16,6 +16,6 @@ export class DataService {
   }
 
   reduce(data){
-    return this.http.get('http://localhost:3000/api/reduce?map='+data);
+    return this.http.get('https://profile-email-server.herokuapp.com/api/reduce?map='+data);
   }
 }
