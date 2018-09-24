@@ -28,6 +28,15 @@ import { HeaderComponent } from './header/header.component';
 import { TagCloudModule } from 'angular-tag-cloud-module';
 
 
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { PushServiceService } from './push-service.service';
+import { environment } from '../environments/environment';
+import { AsyncPipe } from '../../node_modules/@angular/common';
+
+
 
 @NgModule({
   declarations: [
@@ -55,7 +64,11 @@ import { TagCloudModule } from 'angular-tag-cloud-module';
     MatDividerModule,
     MatListModule,
     MatCardModule,
-    TagCloudModule
+    TagCloudModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireMessagingModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   exports: [
     BrowserModule,
@@ -74,7 +87,7 @@ import { TagCloudModule } from 'angular-tag-cloud-module';
     MatCardModule,
     TagCloudModule
   ],
-  providers: [],
+  providers: [AsyncPipe,PushServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
