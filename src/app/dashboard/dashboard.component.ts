@@ -131,14 +131,14 @@ export class DashboardComponent implements OnInit {
     
   ];
   ngOnInit() {
-    this.dataService.reduce(this.sampleValue).subscribe((data) => {
-        this.returnData = data;
-        for (let entry of this.returnData.data) {
-            this.cloudData.push(entry)
-        }
-        console.log(this.cloudData)
+    // this.dataService.reduce(this.sampleValue).subscribe((data) => {
+    //     this.returnData = data;
+    //     for (let entry of this.returnData.data) {
+    //         this.cloudData.push(entry)
+    //     }
+    //     console.log(this.cloudData)
         
-    })
+    // })
 
     const userId = 'user001';
     this.pushService.requestPermission(userId)

@@ -5,16 +5,19 @@ import { AngularFireMessaging } from '@angular/fire/messaging';
 import { mergeMapTo } from 'rxjs/operators';
 import { take } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs'
+import { HttpClient } from '@angular/common/http'
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PushServiceService {
 
-
+  temp:any
   currentMessage = new BehaviorSubject(null);
 
   constructor(
+    private http:HttpClient,
     private angularFireDB: AngularFireDatabase,
     private angularFireAuth: AngularFireAuth,
     private angularFireMessaging: AngularFireMessaging) {
@@ -53,7 +56,7 @@ export class PushServiceService {
         console.log(token);
         this.updateToken(userId, token);
 
-        this.saveTokenToDB(token);
+        this.saveTokenToDB(token,userId);
       },
       (err) => {
         console.error('Unable to get permission to notify.', err);
@@ -72,7 +75,9 @@ export class PushServiceService {
       })
   }
 
-  saveTokenToDB(token){
-
+  saveTokenToDB(token,user){
+      return this.http.get(environment.push_server+'api/v1/insert/m_db/user_data/'+user+'/'+token).subscribe(data => {
+        console.log("We got ",data)
+      });
   }
 }

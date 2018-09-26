@@ -8,5 +8,6 @@ export const environment = {
     projectId: "fir-c3b54",
     storageBucket: "fir-c3b54.appspot.com",
     messagingSenderId: "302533795406"
-  }
+  },
+  push_server:"https://mongo-d.herokuapp.com/"
 };
